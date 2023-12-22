@@ -1,2 +1,6 @@
-# go-lang-traning
-Go lang training course
+# Go lang training course
+
+## Table of contents
+
+# Go lang
+
