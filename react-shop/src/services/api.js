@@ -3,7 +3,7 @@ import mockupProducts from '../mock/products.json'
 import mockupAuth from '../mock/auth.json'
 //#endregion / Mockup data
 
-const useMocks = true
+const useMocks = false
 export const STORE_URL = "https://pininos.zuwu.us/index.php/rest/V1"
 const TEMPORARY_TOKEN = "eyJraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjIsInV0eXBpZCI6MiwiaWF0IjoxNzA0MjA3NjExLCJleHAiOjE3MDQyMTEyMTF9.ZTvRNxsrr2adScAJhiMRzFTQqAvZXnogL88BP0CeQOw"
 

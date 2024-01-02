@@ -2,3 +2,5 @@
 
 Marco Velázquez - Team Lead
 José Mendoza - Magento
+
+[URL Sitio Magento](https://pininos.zuwu.us/pininos.html)
