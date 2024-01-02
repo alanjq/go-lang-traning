@@ -1,17 +1,17 @@
-import { STORE_URL } from "../services/api"
+import ImageCarousel from "./ImageCarousel"
 
 export default function Product({ data }) {
-    const image = `https://pininos.zuwu.us/media/catalog/product/${data.media_gallery_entries[0]?.file}`
 
     return (
         <li key={data.id} className="inline-flex w-64 flex-col text-center lg:w-auto">
             <div className="group relative">
                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200">
-                    <img
+                    {/* <img
                         src={image}
                         alt={data.imageAlt}
                         className="h-full w-full object-cover object-center group-hover:opacity-75"
-                    />
+                    /> */}
+                    <ImageCarousel images={data.media_gallery_entries} baseUrl={"https://pininos.zuwu.us/media/catalog/product"} />
                 </div>
                 <div className="mt-6">
                     <p className="text-sm text-gray-500">{data.color}</p>

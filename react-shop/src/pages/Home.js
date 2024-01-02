@@ -7,7 +7,7 @@ export default function Home() {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        API.products().then((data) => setProducts(data.items))
+        API.products().then((data) => setProducts(data?.items || []))
     }, [])
 
     return <div className="bg-white">
