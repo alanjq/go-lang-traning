@@ -5,7 +5,7 @@ import mockupAuth from '../mock/auth.json'
 
 const useMocks = false
 export const STORE_URL = "https://pininos.zuwu.us/index.php/rest/V1"
-const TEMPORARY_TOKEN = "eyJraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjIsInV0eXBpZCI6MiwiaWF0IjoxNzA0Mzc3OTQxLCJleHAiOjE3MDQzODE1NDF9._uI6ByAJqA-OfD0rT1lviLXnyLsBOGLgPMaXEYxHhzI"
+const TEMPORARY_TOKEN = "eyJraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjIsInV0eXBpZCI6MiwiaWF0IjoxNzA0NDYyNzkzLCJleHAiOjE3MDQ0NjYzOTN9.MaAAXiOdHocpOA_DH7xtJUlY9ZYEZGcjWsnEVF7rBg8"
 
 const callApi = async (endpoint, config) => {
     const options = {
