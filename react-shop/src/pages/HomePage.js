@@ -3,7 +3,7 @@ import API from "../services/api"
 import { useState, useEffect } from 'react'
 
 
-export default function Home() {
+export default function HomePage() {
     const [products, setProducts] = useState([])
 
     useEffect(() => {

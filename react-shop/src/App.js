@@ -1,16 +1,18 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import StoreLayout from './components/StoreLayout';
-import Cart from './pages/Cart';
-import Checkout from './pages/Checkout';
-import Home from "./pages/Home";
+import CartPage from './pages/CartPage';
+import CheckoutPage from './pages/CheckoutPage';
+import HomePage from "./pages/HomePage";
+import ProductDetailPage from './pages/ProductDetailPage';
 
 export function App() {
     return <BrowserRouter>
         <Routes>
             <Route path="/" element={<StoreLayout />}>
-                <Route index element={<Home />} />
-                <Route path="checkout" element={<Checkout />} />
-                <Route path="cart" element={<Cart />} />
+                <Route index element={<HomePage />} />
+                <Route path="checkout" element={<CheckoutPage />} />
+                <Route path="cart" element={<CartPage />} />
+                <Route path="product/:url" element={<ProductDetailPage />} />
             </Route>
         </Routes>
         {/* // Carrito con token de cliente */}
