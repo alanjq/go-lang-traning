@@ -9,7 +9,6 @@ export default function ImageCarousel({ baseUrl, images }) {
     useEffect(() => {
         if (Array.isArray(images) && images.length > 0) {
             setCurrentIndex(0)
-            console.log(images);
         }
     }, [images])
 
