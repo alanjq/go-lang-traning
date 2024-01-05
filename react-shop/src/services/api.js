@@ -3,15 +3,15 @@ import mockupProducts from '../mock/products.json'
 import mockupAuth from '../mock/auth.json'
 //#endregion / Mockup data
 
-const useMocks = false
-export const STORE_URL = "https://pininos.zuwu.us/index.php/rest/V1"
-const TEMPORARY_TOKEN = "eyJraWQiOiIxIiwiYWxnIjoiSFMyNTYifQ.eyJ1aWQiOjIsInV0eXBpZCI6MiwiaWF0IjoxNzA0NDYyNzkzLCJleHAiOjE3MDQ0NjYzOTN9.MaAAXiOdHocpOA_DH7xtJUlY9ZYEZGcjWsnEVF7rBg8"
+// console.log('VAriables', process.env.API_URL);
+const useMocks = process.env.USE_LOCAL_API == "true"
+export const STORE_URL = process.env.API_URL;
 
 const callApi = async (endpoint, config) => {
     const options = {
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${TEMPORARY_TOKEN}`
+            'Authorization': `Bearer ${process.env.TOKEN}`
         },
         ...config
     };
@@ -19,7 +19,7 @@ const callApi = async (endpoint, config) => {
     try {
         const response = await fetch(`${STORE_URL}/${endpoint}`, options);
         const data = await response.json();
-        return console.log(data);
+        return data
     } catch (err) {
         return console.error(err);
     }
@@ -31,7 +31,7 @@ const callMock = async (response) => response
 export const API = {
     auth: () => useMocks ? callMock(mockupAuth) : callApi('integration/admin/token', {
         method: 'POST',
-        body: '{"username":"Qj9TRxKDzBn5ScPyLsuArfVH2gGMXwah","password":"g6rHmXa5bd9pLVzxjQk2nEG3e7Z8uCqK"}'
+        body: `{"username":"${process.env.AUTH_USER}","password":"${process.env.AUTH_PSWD}"}`
     }),
     products: () => useMocks ? callMock(mockupProducts) : callApi('products')
         .then((data) => {
